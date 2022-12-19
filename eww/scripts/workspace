@@ -1,0 +1,32 @@
+#!/bin/sh
+
+function workspaces {
+  for num in 1 2 3 4 5 6 7 8 9 10; do
+    unset -v a"$num"
+    unset -v f"$num"
+  done
+
+  for num in $(hyprctl workspaces | grep ID | awk '{print $3}'); do
+    export a"$num"="t"
+  done
+
+  export f"$(hyprctl monitors | grep active | awk '{print $3}')"="t"
+
+  echo "(box :class \"workspaces\" :orientation \"v\" :spacing 0 :space-evenly \"true\"" \
+    "(button :class \"ws$a1$f1\" 1)" \
+    "(button :class \"ws$a2$f2\" 2)" \
+    "(button :class \"ws$a3$f3\" 3)" \
+    "(button :class \"ws$a4$f4\" 4)" \
+    "(button :class \"ws$a5$f5\" 5)" \
+    "(button :class \"ws$a6$f6\" 6)" \
+    "(button :class \"ws$a7$f7\" 7)" \
+    "(button :class \"ws$a8$f8\" 8)" \
+    "(button :class \"ws$a9$f9\" 9)" \
+    "(button :class \"ws$a10$f10\" 0)" \
+    ")"
+}
+
+workspaces
+socat -u UNIX-CONNECT:/tmp/hypr/"$HYPRLAND_INSTANCE_SIGNATURE"/.socket2.sock - | while read -r event; do
+  workspaces
+done
