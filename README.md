@@ -14,5 +14,7 @@ Do not run the update.sh script. This script was added to make development easie
 - pipewire
 - rofi
 - slurp
+- socat
 - swaybg
+- wl-clipboard
 - xdg-desktop-portal-hyprland-git

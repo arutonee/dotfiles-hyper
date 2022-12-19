@@ -2,6 +2,10 @@
 (defwidget workspaces []
   (literal :content workspace))
 
+(defpoll dnd-script :interval "0.1s" "scripts/dunst")
+(defwidget dnd []
+  (literal :content dnd-script))
+
 
 (defpoll hour :interval "1s" "date '+%H'")
 (defpoll min :interval "1s" "date '+%M'")
@@ -13,11 +17,15 @@
     (button :class "hour" hour)
     (button :class "minute" min)))
 
+(defpoll battery-amount :interval "1s" "scripts/battery")
+(defwidget battery []
+  (literal :content battery-amount))
+
 (defpoll current-volume :interval "0.1s" "amixer get Master | grep Right: | awk -F '[][]' '{print $2}' | tr -d '%'")
 (defwidget volume []
   (box :orientation "v"
-    :class "volumeBox"
-    :valign "start"
+    :class "volume-box"
+    :valign "end"
     (button :class "volume" current-volume)))
 
 
@@ -26,15 +34,31 @@
     :class "top"
     :space-evenly "false"
     :valign "start"
-    (workspaces)))
+    (workspaces)
+    (dnd)))
 
-(defwidget end []
+(defwidget bottom-top []
   (box :orientation "v"
-    :class "end"
+    :class "bottom-top"
+    :space-evenly "false"
+    :valign "start"
+    (battery)
+    (volume)))
+
+(defwidget bottom-bottom []
+  (box :orientation "v"
+    :class "bottom-bottom"
+    :space-evenly "false"
+    :valign "start"
+    (clock)))
+
+(defwidget bottom []
+  (box :orientation "v"
+    :class "bottom"
     :space-evenly "false"
     :valign "end"
-    (volume)
-    (clock)))
+    (bottom-top)
+    (bottom-bottom)))
 
 
 (defwidget bar []
@@ -43,13 +67,13 @@
     :vexpand "false"
     :hexpand "false"
     (top)
-    (end)))
+    (bottom)))
 
 (defwindow bar
   :monitor 0
   :exclusive true
   :focusable false
-  :geometry (geometry :x "0%"
+  :geometry (geometry :x "10px"
     :y "0%"
     :width "2%"
     :height "100%"

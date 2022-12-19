@@ -1,16 +1,18 @@
 .background {
-  background-color: #1e1e2e;
+  // background-color: #1e1e2e;
+  background-color: transparent;
 }
 
 .top {
   margin-top: 0.5em;
 }
 
-.end {
+.bottom {
   margin-bottom: 0.5em;
 }
 
-.workspaces, .clock, .volumeBox {
+.workspaces, .clock, .volume-box, .battery, .dnd-box {
+  background-color: #1e1e2e;
   padding-top: 1em;
   padding-bottom: 1em;
   margin-top: 1em;
@@ -20,6 +22,23 @@
   // border-left: 1px solid #74c7ec;
   // border-right: 1px solid #74c7ec;
   border-radius: 2em;
+}
+
+.dnd {
+  color: #f9e2af;
+}
+
+.dnd-box {
+  border-top-color: #f9e2af;
+  border-bottom-color: #f9e2af;
+}
+
+.battery-percent {
+  font-size: 1em;
+}
+
+.volume {
+  font-size: 1.5em;
 }
 
 button {
@@ -46,4 +65,9 @@ button {
   border-right: 2px solid #cba6f7;
   border-radius: 0;
   font-weight: bold;
+}
+
+.wsmt {
+  border-left: 2px solid #f9e2af;
+  border-radius: 0;
 }
