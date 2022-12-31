@@ -2,11 +2,6 @@
 (defwidget workspaces []
   (literal :content workspace))
 
-(defpoll dnd-script :interval "0.1s" "scripts/dunst")
-(defwidget dnd []
-  (literal :content dnd-script))
-
-
 (defpoll hour :interval "1s" "date '+%H'")
 (defpoll min :interval "1s" "date '+%M'")
 
@@ -34,8 +29,7 @@
     :class "top"
     :space-evenly "false"
     :valign "start"
-    (workspaces)
-    (dnd)))
+    (workspaces)))
 
 (defwidget bottom-top []
   (box :orientation "v"
