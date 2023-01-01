@@ -14,7 +14,7 @@
   margin-bottom: 0.5em;
 }
 
-.workspaces, .clock, .volume-box, .battery {
+.workspaces, .clock, .volume-box, .battery, .keyboard {
   background-color: #1e1e2e;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -23,10 +23,6 @@
   border-top: 0.2em solid #74c7ec;
   border-bottom: 0.2em solid #74c7ec;
   border-radius: 2em;
-}
-
-.hidden {
-  color: transparent;
 }
 
 .battery-percent {

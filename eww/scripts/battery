@@ -7,7 +7,7 @@ function battery {
     percent=100
   fi
 
-  echo "(box :class \"battery\" :valign \"start\" (button :class \"battery-percent\" \"$percent%\"))"
+  echo "(box :class \"battery\" :valign \"end\" (button :class \"battery-percent\" \"$percent%\"))"
 }
 
 battery
