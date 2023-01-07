@@ -1,8 +1,7 @@
 * {
   bg: #1e1e2e;
-  font: "Fantasque Sans Mono 24";
-  entry-color: #cdd6f4;
-  entry-border: #cba6f7;
+  font: "Fantasque Sans Mono 12";
+  entry-color: #f38ba8;
   text: #cdd6f4;
   selected: #cba6f7;
   selected-text: #1e1e2e;
@@ -10,9 +9,10 @@
 
 configuration {
   cycle: true;
-  disable-history: true;
+  disable-history: false;
   modi: "drun";
   display-drun: "apps";
+  drun-display-format: "{name}";
   font: "@font";
 }
 
@@ -23,10 +23,10 @@ entry {
 
 window {
   location: center;
-  width: 50%;
+  width: 33%;
   background-color: @bg;
   border: none;
-  height: 50%;
+  height: 66%;
 }
 
 #scrollbar {
@@ -35,14 +35,11 @@ window {
 }
 
 mainbox {
-  padding: 12px;
+  padding: 2em;
 }
 
 inputbar {
   background-color: transparent;
-  border-color: @entry-border;
-  border: 2px;
-  border-radius: 16px;
 
   padding: 8px 16px;
   spacing: 8px;
