@@ -3,7 +3,7 @@
 
   frame_width = 2
   separator_height = 1
-  font = Fantasque Sans Mono 16
+  font = Fantasque Sans Mono 12
   format = "<b>%a - %s</b>\n%b"
   show_age_threshold = -1
 
