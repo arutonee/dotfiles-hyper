@@ -1,6 +1,7 @@
 [global]
   separator_color = "#74c7ec"
 
+  notification_limit = 2
   frame_width = 2
   separator_height = 1
   font = Fantasque Sans Mono 12
