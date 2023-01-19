@@ -22,7 +22,7 @@ function workspaces {
     done
   done <<< "$(hyprctl workspaces)"
 
-  export f"$(hyprctl monitors | grep active | awk '{print $3}')"="t"
+  export f"$(hyprctl monitors | grep active | awk '{print $3}' | head -n1)"="t"
 
   echo "(box :class \"workspaces\" :orientation \"v\" :spacing 0 :space-evenly \"true\"" \
     "(button :class \"ws$a1$f1 wsm$m1\" 1)" \
