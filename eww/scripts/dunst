@@ -1,5 +1,0 @@
-if $(dunstctl is-paused); then
-  echo "(box :class \"dnd-box\" :valign \"end\" (button :class \"dnd\" \"☾\"))"
-else
-  echo "(box :valign \"end\")"
-fi
