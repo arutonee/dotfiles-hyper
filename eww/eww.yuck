@@ -23,7 +23,7 @@
 (defwidget battery []
   (literal :content battery-amount))
 
-(defpoll current-volume :interval "0.1s" "amixer get Master | grep Right: | awk -F '[][]' '{print $2}' | tr -d '%'")
+(defpoll current-volume :interval "0.1s" "pamixer --get-volume")
 (defwidget volume []
   (box :orientation "v"
     :class "volume-box"
