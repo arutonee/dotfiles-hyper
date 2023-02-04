@@ -11,10 +11,13 @@ Do not run the update.sh script. This script was added to make development easie
 - grim
 - hyprland
 - kitty
+- pamixer
 - pipewire
+- pulseaudio
 - rofi
 - slurp
 - socat
 - swaybg
 - wl-clipboard
+- xclip
 - xdg-desktop-portal-hyprland-git
