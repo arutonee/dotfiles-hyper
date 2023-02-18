@@ -2,13 +2,6 @@
 (defwidget workspaces []
   (literal :content workspace))
 
-(defpoll layout :interval "0.1s" "scripts/getlayout")
-(defwidget keyboard []
-  (box :orientation "v"
-    :class "keyboard"
-    :valign "start"
-    (button :class "layout" layout)))
-
 (defpoll hour :interval "1s" "date '+%H'")
 (defpoll min :interval "1s" "date '+%M'")
 
@@ -42,8 +35,7 @@
   (box :orientation "v"
     :class "bottom-top"
     :space-evenly "false"
-    :valign "start"
-    (keyboard)
+    :valign "end"
     (battery)))
 
 (defwidget bottom-bottom []
