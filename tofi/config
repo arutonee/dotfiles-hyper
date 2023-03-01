@@ -1,0 +1,20 @@
+background-color = #1e1e2eaa
+outline-color = #1e1e2eaa
+
+text-color = #cdd6f4
+selection-color = #cba6f7
+
+prompt-text = "Run: "
+prompt-color = #9399b2
+
+hide-cursor = true
+fuzzy-match = true
+
+font = "Fantasque Sans Mono"
+font-size = 24
+
+outline-width = 24
+border-width = 0
+
+width = 100%
+height = 100%

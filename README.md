@@ -14,10 +14,10 @@ Do not run the update.sh script. This script was added to make development easie
 - pamixer
 - pipewire
 - pulseaudio
-- rofi
 - slurp
 - socat
 - swaybg
+- tofi
 - wl-clipboard
 - xclip
 - xdg-desktop-portal-hyprland-git
